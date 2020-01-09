@@ -1,4 +1,4 @@
-## Image_Forensics_Dectection##
+## Image_Forensics_Dectection
 Given there exists many "Fake images" influencing both science and politics, it is important for us to know if an image is manipulated or not. Not only just knowing if it's forged, but how and where it was modified. For simplicity, the goal of this project is to localize the tampered region in a digitally forged image with only the modification being copy-paste forgery. We attempted three algorithms: Error level analysis(ELA), JPEG Ghost detection, Feature matching based analysis. 
  
 Assumptions include but not limited to the following: <br/>
@@ -8,7 +8,7 @@ Assumptions include but not limited to the following: <br/>
 ● There will be some levels of resampling done on the pasted region and only nearest-neighbor and bilinear interpolation will be used. <br/>
 
 
-## ELA## 
+## ELA
 
 The theory behind this algorithm is that when a resampled region is spliced into the image, the resaved jpeg image will introduce errors at different levels than the rest of the image. When the image is modified, the 8x8 cells containing the resampled region will have higher error than any other unmodified cell 
  
@@ -19,5 +19,5 @@ First we resaved the modified image at a 95% compression factor. Then we take th
 3. Threshold the error values <br/>
 4. Morphological operations to the the output mask <br/>
 
-JPEG Ghost Detection <br/>
+## JPEG Ghost Detection 
 The second method we've attempted is by utilizing JPEG Ghost effect during compression. JPEG Ghost mentioned in Farid's paper refers to the second minimum in the error vs quantization plot, where the first minimum reveals the original compression.  
